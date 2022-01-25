@@ -1,0 +1,13 @@
+{
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#302E24",
+        "titleBar.activeBackground": "#434032",
+        "titleBar.activeForeground": "#FAFAF9"
+    },
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintArgs": [
+        "--rcfile=.pylintrc",
+        "--django-settings-module=docline247.settings"
+    ]
+}
