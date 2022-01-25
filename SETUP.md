@@ -68,3 +68,9 @@ Install autopep8
 ```sh
 pip install autopep8
 ```
+
+Save the requirements
+
+```sh
+pip freeze > pip-requirements
+```
