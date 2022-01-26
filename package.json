@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "css": "node-sass --watch static -o static"
+  },
+  "dependencies": {
+    "node-sass": "^7.0.1"
+  }
+}
