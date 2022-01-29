@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "build:css":"node-sass static/css/src/main.scss static/css/dist/main.css ",
-    "watch:css": "node-sass --watch static/css/src -o static/css/dist"
+    "build:css":"node-sass static/css/src/main.scss static/css/dest/main.css ",
+    "watch:css": "node-sass --watch static/css/src -o static/css/dest"
   },
   "dependencies": {
     "node-sass": "^7.0.1"
