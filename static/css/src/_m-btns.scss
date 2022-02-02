@@ -1,0 +1,20 @@
+.m-btns{
+    width: 214px;
+    height: 56px;
+    border-radius: 16px;
+    border: none;
+    font-size: var(--btn-font-size);
+    font-weight: var(--btn-font-weight);
+   
+    &--white{
+        color: #237d9e;
+        background-color: #fff;
+    }
+
+    &--blue
+    {   
+        color: #fff;
+        background-color: var(--main-bg-color);
+        border: 0.5px solid #fff; 
+    }
+}

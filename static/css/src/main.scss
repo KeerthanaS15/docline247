@@ -1,10 +1,5 @@
-:root {
-    --body-bg-color: rgb(61, 177, 177);
-    --h1-font-color:rgb(94, 64, 122);
-  }
-body{
-    background-color: var(--body-bg-color);
-}
-h1{
-    color: var(--h1-font-color);
-}
+@import "base.scss";
+@import "config.scss";
+@import "m-btns.scss";
+@import "p-home-layout.scss";
+@import "m-card.scss"

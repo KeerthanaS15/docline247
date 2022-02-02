@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,11 +9,159 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOCLINE 24*7</title>
-    <link rel="stylesheet" href="{% static 'css/dest/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dest/main.css' %}" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300&family=Work+Sans:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   
 </head>
 
 <body>
-    <h1>Hello world</h1>
+    <main class="p-home-main">
+        <div id="sidenav" class="p-home-sidenav">
+            <div class="p-home-nav-head">
+                <img src="{% static 'images/sidenav-icon.png' %}" alt="" class=""> 
+                <span class="p-home-nav-heading">DOCLINE 24X7</span>
+            </div>
+
+            <hr>
+            
+            <a  class="p-home-nav-closebtn" onclick="closeNav()">&gt;</a>
+
+            <ul class="p-home-nav-list">
+                <li>
+                    <a href="">
+                        <img src="{% static 'images/appointment.svg' %}" alt="">
+                        <span>How to book an <br> appointment?</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="{% static 'images/calendar.svg' %}" alt="" class="">
+                        <span>Book an appointment</span>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#">
+                        <img src="{% static 'images/contact.svg' %}" alt="" class=""> 
+                        <span>Contact Us</span> 
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <img src="{% static 'images/logout.svg' %}" alt="" class=""> 
+                        <span>Admin Login</span>
+                    </a>
+                </li>
+
+                
+            </ul>
+            
+        </div>
+        
+        <span onclick="openNav()" class="p-home-menuicon">
+            <img src="{% static 'images/Hamburger menu.png' %}" alt="" >
+        </span>
+
+        <div class="p-home-hero">
+            <img src="{% static 'images/doctor-home.png' %}" alt="">
+        </div>
+
+        <h1 class="p-home-mainheading">DOCLINE 24x7</h1>
+
+        <div class="p-home-btns">
+            <button class="m-btns m-btns--white">BOOK AN <br> APPOINMENT</button>
+            <button class="m-btns m-btns--blue">DOCTOR DETAILS</button>
+        </div>
+    </main>
+
+    <div id="myCarousel" class="carousel slide slides" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active dot"></li>
+        <li data-target="#myCarousel" data-slide-to="1" class="dot"></li>
+        <li data-target="#myCarousel" data-slide-to="2" class="dot"></li>
+      </ol>
+  
+      <div class="carousel-inner bg-white">
+            <div class="m-card item active">
+                <h1 class="m-card__head">GUIDELINES <br> STEP-1</h1>
+                
+                <div class="m-card__image">
+                    <img src="{% static 'images/step-1.svg' %}" alt="">
+                </div>
+                
+                <h3 class="m-card__sub-heading">VIEW DOCTOR DETAILS</h3>
+        
+                <p class="m-card__desc">
+                    Refer the doctor details  <br>
+                      to choose the best <br>
+                        based on your <br>
+                         health needs. <br>
+                </p>
+            </div>
+
+            <div class="m-card item">
+                <h1 class="m-card__head">GUIDELINES <br> STEP-2</h1>
+                
+                <div class="m-card__image">
+                    <img src="{% static 'images/step-2.svg' %}" alt="">
+                </div>
+                
+                <h3 class="m-card__sub-heading">REQUEST APPOINMENT</h3>
+        
+                <p class="m-card__desc">
+                    Fill the form by entering <br>
+                     necessary details in the  <br>
+                      required fields and click <br>
+                       submit button.                    
+                </p>              
+            </div>
+            
+            <div class="m-card item">
+                <h1 class="m-card__head">GUIDELINES <br> STEP-3</h1>
+                
+                <div class="m-card__image">
+                    <img src="{% static 'images/step-3.svg' %}" alt="">
+                </div>
+                
+                <h3 class="m-card__sub-heading">STATUS CHECKING</h3>
+        
+                <p class="m-card__desc">
+                    Visit the link sent via the <br>
+                    email to check your  <br>
+                     appointment status. 
+                    
+                </p>              
+            </div>
+        
+      </div>     
+  </div>
+
+        <div class="p-home-contact">
+            <div class="p-home-contact-bg">
+            </div>
+            <div class="p-home-contact-main">
+            </div>
+            <div class="p-home-contact-list">
+                <h3>CONTACT US</h3>
+                <ul>
+                    <li><img src="{% static 'images/location.svg' %}" alt=""><span>lorem ipsum</span></li>
+               
+                    <li><img src="{% static 'images/mail.svg' %}" alt=""><span>docline247@gmail.com</span></li>
+               
+                    <li><img src="{% static 'images/telephone.svg' %}" alt=""><span>+91 12345 67890</span></li>
+                </ul>
+            </div>
+            
+        </div>
+
+    <script src="{% static 'js/core.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 
 </html>
+
