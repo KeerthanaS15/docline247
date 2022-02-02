@@ -1,0 +1,8 @@
+.m-contact-item {
+    display: block;
+    /* todo: implement */
+
+    & + & {
+        margin-block-start: 66px;
+    }
+}

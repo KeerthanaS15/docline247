@@ -1,0 +1,13 @@
+.m-contact {
+    padding: 20px 24px;
+    background-color: #237D9E;
+    color: white;
+    width: 100%;
+    z-index: var(--home-contact-content-zindex);
+
+    &__title {
+        margin-block-start: 0;
+        margin-block-end: 32px;
+        text-align: center;
+    }
+}

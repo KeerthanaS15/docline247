@@ -1,0 +1,29 @@
+.p-home {
+    --home-contact-content-zindex: 2;
+    --home-contact-white-bg-zindex: 1;
+
+    &__contact {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        padding-inline: 45px;
+        background-color: #95C2D2;
+        min-height: 100vh;
+
+        &::before {
+            position: absolute;
+            z-index: var(--home-contact-white-bg-zindex);
+            top: 36px;
+            left: 87px;
+            content: '';
+            display: block;
+            width: 100%;
+            height: calc(100vh - 72px);
+            background-color: white;
+        }
+    }
+}
+
+@import './p-home.d/m-contact';
+@import './p-home.d/m-contact-item';
