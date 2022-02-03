@@ -6,7 +6,6 @@
         position: relative;
         display: flex;
         align-items: center;
-
         padding-inline: 45px;
         background-color: #95C2D2;
         min-height: 100vh;
@@ -23,7 +22,35 @@
             background-color: white;
         }
     }
+    &__menuicon{
+        float: right;
+        margin: 26px;
+        font-size:30px;
+        cursor:pointer;
+    }
+    &__hero{
+        margin-left: 64px;
+    }
+    &__mainheading{
+        color: #fff;
+        font-weight: bold;
+      }
+    &__btns{
+        margin-top: 5%;
+        margin-left: 20%;
+    }
+    &__main{
+        height: var(--body-max-height);
+        background-color: var(--main-bg-color);
+      
+      }
+    &__btn{
+        & + &{
+            margin-block-start: 28px;
+        }
+    }      
 }
-
+@import './p-home.d/m-sidenav';
 @import './p-home.d/m-contact';
 @import './p-home.d/m-contact-item';
+
