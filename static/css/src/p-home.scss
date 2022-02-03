@@ -9,6 +9,7 @@
         padding-inline: 45px;
         background-color: #95C2D2;
         min-height: 100vh;
+        overflow: hidden;
 
         &::before {
             position: absolute;
@@ -17,7 +18,7 @@
             left: 87px;
             content: '';
             display: block;
-            width: 100%;
+            width: 77%;
             height: calc(100vh - 72px);
             background-color: white;
         }
