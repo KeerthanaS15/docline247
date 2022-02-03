@@ -1,9 +1,10 @@
 {
   "scripts": {
-    "build:css":"node-sass static/css/src/main.scss static/css/dest/main.css ",
+    "build:css": "node-sass static/css/src/main.scss static/css/dest/main.css ",
     "watch:css": "node-sass --watch static/css/src -o static/css/dest"
   },
   "dependencies": {
-    "node-sass": "^7.0.1"
+    "node-sass": "^7.0.1",
+    "yarn": "^1.22.17"
   }
 }

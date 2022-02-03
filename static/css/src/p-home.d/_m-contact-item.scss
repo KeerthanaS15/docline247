@@ -1,8 +1,24 @@
 .m-contact-item {
-    display: block;
-    /* todo: implement */
+	display: flex;
+	align-items: center;
+	& + & {
+		margin-block-start: 66px;
+	}
 
-    & + & {
-        margin-block-start: 66px;
-    }
+	&::before {
+		content: " ";
+		display: block;
+		width: 44px;
+		height: 44px;
+		margin-right: 10px;
+	}
+	&--location::before {
+		background: url("/static/images/contact-icon.svg") 0 0;
+	}
+	&--email::before {
+		background: url("/static/images/contact-icon.svg") 0 88px;
+	}
+	&--phone::before {
+		background: url("/static/images/contact-icon.svg") 0 44px;
+	}
 }

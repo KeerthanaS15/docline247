@@ -31,7 +31,19 @@
     text-align: center; }
 
 .m-contact-item {
-  display: block;
-  /* todo: implement */ }
+  display: flex;
+  align-items: center; }
   .m-contact-item + .m-contact-item {
     margin-block-start: 66px; }
+  .m-contact-item::before {
+    content: " ";
+    display: block;
+    width: 44px;
+    height: 44px;
+    margin-right: 10px; }
+  .m-contact-item--location::before {
+    background: url("/static/images/contact-icon.svg") 0 0; }
+  .m-contact-item--email::before {
+    background: url("/static/images/contact-icon.svg") 0 88px; }
+  .m-contact-item--phone::before {
+    background: url("/static/images/contact-icon.svg") 0 44px; }
