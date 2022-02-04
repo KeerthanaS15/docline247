@@ -17,41 +17,35 @@
 
             <hr class="m-sidenav__line">
 
-            <!-- <a class="m-sidenav__closebtn" onclick="closeNav()">&gt;</a> -->
-
             <ul class="m-sidenav__list">
                 <li>
-                    <a href="#" class="m-sidenav__items">
-                        <img src="{% static 'images/appointment.svg' %}" alt="">
-                        <span class="m-sidenav__item">How to book an <br> appointment?</span>
+                    <a href="#myCarousel" class="m-sidenav__items">
+                        <span class="m-sidenav__item m-sidenav__item-how">How to book an <br> appointment?</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="#" class="m-sidenav__items">
-                        <img src="{% static 'images/calendar.svg' %}" alt="" class="">
-                        <span class="m-sidenav__item">Book an appointment</span>
+                        <span class="m-sidenav__item m-sidenav__item-book">Book an appointment</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact-us" class="m-sidenav__items">
+                        <span class="m-sidenav__item m-sidenav__item-contact">Contact Us</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="#" class="m-sidenav__items">
-                        <img src="{% static 'images/contact.svg' %}" alt="" class="">
-                        <span class="m-sidenav__item">Contact Us</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#" class="m-sidenav__items">
-                        <img src="{% static 'images/logout.svg' %}" alt="" class="">
-                        <span class="m-sidenav__item">Admin Login</span>
+                        <span class="m-sidenav__item m-sidenav__item-login">Admin Login</span>
                     </a>
                 </li>
             </ul>
         </div>
 
         <span onclick="openNav()" class="p-home__menuicon">
-            <img src="{% static 'images/Hamburger menu.png' %}" alt="" >
+            <img src="{% static 'images/Hamburger menu.png' %}" alt="">
         </span>
 
         <div id="overlay" class="m-sidenav__overlay" onclick="closeNav()"></div>
@@ -68,14 +62,16 @@
         </div>
     </main>
 
-    <div id="myCarousel" class="carousel slide slides" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active dot"></li>
-        <li data-target="#myCarousel" data-slide-to="1" class="dot"></li>
-        <li data-target="#myCarousel" data-slide-to="2" class="dot"></li>
-      </ol>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active dot"></li>
 
-      <div class="carousel-inner bg-white">
+            <li data-target="#myCarousel" data-slide-to="1" class="dot"></li>
+
+            <li data-target="#myCarousel" data-slide-to="2" class="dot"></li>
+        </ol>
+
+        <div class="carousel-inner bg-white">
             <div class="m-card item active">
                 <h1 class="m-card__head">GUIDELINES <br> STEP-1</h1>
 
@@ -86,10 +82,10 @@
                 <h3 class="m-card__sub-heading">VIEW DOCTOR DETAILS</h3>
 
                 <p class="m-card__desc">
-                    Refer the doctor details  <br>
-                      to choose the best <br>
-                        based on your <br>
-                         health needs. <br>
+                    Refer the doctor details <br>
+                    to choose the best <br>
+                    based on your <br>
+                    health needs. <br>
                 </p>
             </div>
 
@@ -104,9 +100,9 @@
 
                 <p class="m-card__desc">
                     Fill the form by entering <br>
-                     necessary details in the  <br>
-                      required fields and click <br>
-                       submit button.
+                    necessary details in the <br>
+                    required fields and click <br>
+                    submit button.
                 </p>
             </div>
 
@@ -121,21 +117,25 @@
 
                 <p class="m-card__desc">
                     Visit the link sent via the <br>
-                    email to check your  <br>
-                     appointment status.
+                    email to check your <br>
+                    appointment status.
                 </p>
             </div>
-      </div>
-      
-      <a class="left carousel-control" href="#myCarousel" style ="background: none; color: #237d9e; font-weight: bold; opacity: 100;" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left"></span>
-        <span class="sr-only">Previous</span>
-      </a>
+        </div>
 
-      <a class="right carousel-control" href="#myCarousel " style="background: none; color: #237d9e; font-weight: bold; opacity: 100;" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right"></span>
-        <span class="sr-only">Next</span>
-      </a>
+        <a class="left carousel-control" href="#myCarousel"
+            style="background: none; color: #237d9e; font-weight: bold; opacity: 100;" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+
+            <span class="sr-only">Previous</span>
+        </a>
+
+        <a class="right carousel-control" href="#myCarousel"
+            style="background: none; color: #237d9e; font-weight: bold; opacity: 100;" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+
+            <span class="sr-only">Next</span>
+        </a>
     </div>
 
     <!-- <div class="p-home-contact">
@@ -165,7 +165,7 @@
         </div>
     </div> {% endcomment %}
 
-    <div class="p-home__contact">
+    <div class="p-home__contact" id="contact-us">
         <div class="m-contact">
             <h3 class="m-contact__title">Contact Us</h3>
 
