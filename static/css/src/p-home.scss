@@ -23,33 +23,16 @@
 			background-color: white;
 		}
 	}
-	&__menuicon {
-		float: right;
-		margin: 26px;
-		font-size: 30px;
-		cursor: pointer;
-	}
-	&__hero {
-		margin-left: 64px;
-	}
-	&__mainheading {
-		color: #fff;
-		font-weight: bold;
-	}
-	&__btns {
-		margin-top: 5%;
-		margin-left: 20%;
-	}
+
 	&__main {
 		height: var(--body-max-height);
 		background-color: var(--main-bg-color);
-	}
-	&__btn {
-		& + & {
-			margin-block-start: 28px;
-		}
-	}
+	}	
 }
+
+@import "./p-home.d/m-main";
 @import "./p-home.d/m-sidenav";
 @import "./p-home.d/m-contact";
 @import "./p-home.d/m-contact-item";
+@import "./p-home.d/m-navhead";
+@import "./p-home.d/m-navlist";

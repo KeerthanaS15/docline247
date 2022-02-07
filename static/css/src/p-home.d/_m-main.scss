@@ -1,0 +1,31 @@
+.m-main{
+    &__menuicon {
+		float: right;
+		margin: 26px;
+		font-size: 30px;
+		cursor: pointer;
+	}
+    	
+	&__hero {
+		margin-left: 64px;
+	}
+
+    &__mainheading {
+		color: #fff;
+		font-weight: bold;
+	}
+
+    &__btns {
+		margin-top: 5%;
+		margin-left: 20%;
+        display: flex;
+        flex-flow: column;
+        row-gap: 28px;
+	}
+
+    &__overlay {
+		position: fixed;
+		height: 100%;
+		width: 100%;
+	}
+}

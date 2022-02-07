@@ -10,18 +10,36 @@
 <div class="p-home">
     <main class="p-home__main">
         <div id="sidenav" class="m-sidenav">
-            <div class="m-sidenav__head">
-                <img src="{% static 'images/sidenav-icon.png' %}" alt="" class="">
-                <span class="m-sidenav__heading">DOCLINE 24X7</span>
+            <div class="m-sidenav__head m-navhead">
+                    <img src="{% static 'images/sidenav-icon.png' %}" alt="hospital-sign">
+                    <span class="m-navhead__heading">DOCLINE 24X7</span>
             </div>
 
-            <hr class="m-sidenav__line">
+            <hr class="m-sidenav__line ">
 
-            <ul class="m-sidenav__list">
-                <li>
-                    <a href="#myCarousel" class="m-sidenav__items">
-                        <span class="m-sidenav__item m-sidenav__item-how">How to book an <br> appointment?</span>
+            <div class="m-sidenav__list m-navlist">
+                    <a href="#myCarousel" class="m-navlist__item m-navlist__item--how">
+                       How to book an <br> appointment?
                     </a>
+
+                    <a href="#" class="m-navlist__item m-navlist__item--book">
+                        Book an appointment
+                    </a>
+
+                    <a href="#" class="m-navlist__item m-navlist__item--contact">
+                        Contact Us
+                    </a>
+                    
+                    <a href="#" class="m-navlist__item m-navlist__item--login">
+                        Admin Login
+                    </a>
+            </div>
+
+            <!-- <ul class="m-sidenav__list">
+                <li>
+                        <a href="#myCarousel" class="m-sidenav__items">
+                            <span class="m-sidenav__item m-sidenav__item-how">How to book an <br> appointment?</span>
+                        </a>
                 </li>
 
                 <li>
@@ -41,25 +59,27 @@
                         <span class="m-sidenav__item m-sidenav__item-login">Admin Login</span>
                     </a>
                 </li>
-            </ul>
+            </ul> -->
         </div>
+        
+        <div class="m-main">
+            <span onclick="openNav()" class="m-main__menuicon">
+                <img src="{% static 'images/Hamburger menu.png' %}" alt="">
+            </span>
+    
+            <div id="overlay" class="m-main__overlay" onclick="closeNav()"></div>
+    
+            <div class="m-main__hero">
+                <img src="{% static 'images/doctor-home.png' %}" alt="">
+            </div>
+    
+            <h1 class="m-main__mainheading">DOCLINE 24x7</h1>    
 
-        <span onclick="openNav()" class="p-home__menuicon">
-            <img src="{% static 'images/Hamburger menu.png' %}" alt="">
-        </span>
-
-        <div id="overlay" class="m-sidenav__overlay" onclick="closeNav()"></div>
-
-        <div class="p-home__hero">
-            <img src="{% static 'images/doctor-home.png' %}" alt="">
-        </div>
-
-        <h1 class="p-home__mainheading">DOCLINE 24x7</h1>
-
-        <div class="p-home__btns">
-            <button class="m-btns m-btns--white p-home__btn">BOOK AN <br> APPOINMENT</button>
-            <button class="m-btns m-btns--blue p-home__btn">DOCTOR DETAILS</button>
-        </div>
+            <div class="m-main__btns">
+                <button class="m-btn m-btn--white">BOOK AN <br> APPOINMENT</button>
+                <button class="m-btn m-btn--blue">DOCTOR DETAILS</button>
+            </div>
+        </div> 
     </main>
 
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -126,44 +146,15 @@
         <a class="left carousel-control" href="#myCarousel"
             style="background: none; color: #237d9e; font-weight: bold; opacity: 100;" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left"></span>
-
             <span class="sr-only">Previous</span>
         </a>
 
         <a class="right carousel-control" href="#myCarousel"
             style="background: none; color: #237d9e; font-weight: bold; opacity: 100;" data-slide="next">
             <span class="glyphicon glyphicon-chevron-right"></span>
-
             <span class="sr-only">Next</span>
         </a>
     </div>
-
-    <!-- <div class="p-home-contact">
-        <div class="p-home-contact-bg"></div>
-        <div class="p-home-contact-main"></div>
-        <div class="p-home-contact-list">
-            <h3>CONTACT US</h3>
-            <ul>
-                <li><img src="{% static 'images/location.svg' %}" alt=""><span>lorem ipsum</span></li>
-
-                <li><img src="{% static 'images/mail.svg' %}" alt=""><span>docline247@gmail.com</span></li>
-
-                <li><img src="{% static 'images/telephone.svg' %}" alt=""><span>+91 12345 67890</span></li>
-            </ul>
-        </div>
-    </div> -->
-
-    {% comment %} <div class="p-home__contact">
-        <div class="p-home__contact-content">
-            <h3 class="p-home__content-title">Contact Us</h3>
-
-            <span class="p-home__contact-item p-home__contact-item--location">Lorem ipsum</span>
-
-            <span class="p-home__contact-item p-home__contact-item--email">docline247@gmail.com</span>
-
-            <span class="p-home__contact-item p-home__contact-item--phone">+91 9876543210</span>
-        </div>
-    </div> {% endcomment %}
 
     <div class="p-home__contact" id="contact-us">
         <div class="m-contact">
