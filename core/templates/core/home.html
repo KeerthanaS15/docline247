@@ -1,0 +1,171 @@
+{% extends 'master.html' %}
+
+{% load static %}
+
+{% block addl_stylesheets %}
+<link rel="stylesheet" href="{% static 'css/dist/p-home.css' %}">
+{% endblock addl_stylesheets %}
+
+{% block view_content %}
+<div class="p-home">
+    <main class="p-home__main">
+        <div id="sidenav" class="m-sidenav">
+            <div class="m-sidenav__head m-navhead">
+                <img src="{% static 'images/sidenav-icon.png' %}" alt="hospital-sign">
+                <span class="m-navhead__heading">DOCLINE 24X7</span>
+            </div>
+
+            <hr class="m-sidenav__line">
+
+            <nav class="m-sidenav__list m-nav">
+                <a href="#myCarousel" class="m-nav__item m-nav__item--how">
+                   How to book an <br> appointment?
+                </a>
+
+                <a href="#" class="m-nav__item m-nav__item--book">
+                    Book an appointment
+                </a>
+
+                <a href="#" class="m-nav__item m-nav__item--contact">
+                    Contact Us
+                </a>
+                    
+                <a href="#" class="m-nav__item m-nav__item--login">
+                    Admin Login
+                </a>
+            </nav>
+
+            <!-- <ul class="m-sidenav__list">
+                <li>
+                        <a href="#myCarousel" class="m-sidenav__items">
+                            <span class="m-sidenav__item m-sidenav__item-how">How to book an <br> appointment?</span>
+                        </a>
+                </li>
+
+                <li>
+                    <a href="#" class="m-sidenav__items">
+                        <span class="m-sidenav__item m-sidenav__item-book">Book an appointment</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact-us" class="m-sidenav__items">
+                        <span class="m-sidenav__item m-sidenav__item-contact">Contact Us</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="m-sidenav__items">
+                        <span class="m-sidenav__item m-sidenav__item-login">Admin Login</span>
+                    </a>
+                </li>
+            </ul> -->
+        </div>
+        
+        <div class="m-main">
+            <span onclick="openNav()" class="m-main__menuicon">
+                <img src="{% static 'images/Hamburger menu.png' %}" alt="">
+            </span>
+    
+            <div id="overlay" class="m-main__overlay" onclick="closeNav()"></div>
+    
+            <img src="{% static 'images/doctor-home.png' %}" class="m-main__hero" alt="">
+    
+            <h1 class="m-main__mainheading">DOCLINE 24x7</h1>    
+
+            <div class="m-main__btns">
+                <button class="m-btn m-btn--white">BOOK AN <br> APPOINMENT</button>
+                <button class="m-btn m-btn--blue">DOCTOR DETAILS</button>
+            </div>
+        </div> 
+    </main>
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active dot"></li>
+
+            <li data-target="#myCarousel" data-slide-to="1" class="dot"></li>
+
+            <li data-target="#myCarousel" data-slide-to="2" class="dot"></li>
+        </ol>
+
+        <div class="carousel-inner bg-white">
+            <div class="m-card item active">
+                <h1 class="m-card__head">GUIDELINES <br> STEP-1</h1>
+
+                <div class="m-card__image">
+                    <img src="{% static 'images/step-1.svg' %}" alt="">
+                </div>
+
+                <h3 class="m-card__sub-heading">VIEW DOCTOR DETAILS</h3>
+
+                <p class="m-card__desc">
+                    Refer the doctor details 
+                    to choose the best 
+                    based on your 
+                    health needs. 
+                </p>
+            </div>
+
+            <div class="m-card item">
+                <h1 class="m-card__head">GUIDELINES <br> STEP-2</h1>
+
+                <div class="m-card__image">
+                    <img src="{% static 'images/step-2.svg' %}" alt="">
+                </div>
+
+                <h3 class="m-card__sub-heading">REQUEST APPOINMENT</h3>
+
+                <p class="m-card__desc">
+                    Fill the form by entering 
+                    necessary details in the 
+                    required fields and click 
+                    submit button.
+                </p>
+            </div>
+
+            <div class="m-card item">
+                <h1 class="m-card__head">GUIDELINES <br> STEP-3</h1>
+
+                <div class="m-card__image">
+                    <img src="{% static 'images/step-3.svg' %}" alt="">
+                </div>
+
+                <h3 class="m-card__sub-heading">STATUS CHECKING</h3>
+
+                <p class="m-card__desc">
+                    Visit the link sent via the 
+                    email to check your 
+                    appointment status.
+                </p>
+            </div>
+        </div>
+
+        <a class="left carousel-control" href="#myCarousel"
+            style="background: none; color: #237d9e; font-weight: bold; opacity: 100;" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+
+        <a class="right carousel-control" href="#myCarousel"
+            style="background: none; color: #237d9e; font-weight: bold; opacity: 100;" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <div class="p-home__contact" id="contact-us">
+        <div class="m-contact">
+            <h3 class="m-contact__title">Contact Us</h3>
+
+            <span class="m-contact-item m-contact-item--location">Lorem ipsum</span>
+            <span class="m-contact-item m-contact-item--email">docline247@gmail.com</span>
+            <span class="m-contact-item m-contact-item--phone">+91 9876543210</span>
+        </div>
+    </div>
+</div>
+{% endblock view_content %}
+
+{% block addl_scripts %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock addl_scripts %}

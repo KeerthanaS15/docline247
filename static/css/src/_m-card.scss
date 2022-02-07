@@ -1,0 +1,44 @@
+.m-card {
+	height: var(--body-max-height);
+	background-color: #fff !important;
+	&__head {
+		padding: 37px;
+		color: var(--main-bg-color);
+		font-weight: bold;
+	}
+
+	&__image {
+		display: flex;
+		justify-content: center;
+		
+	}
+
+	&__sub-heading {
+		color: var(--main-bg-color);
+		text-align: center;
+		margin-top: 10px;
+		font-weight: bold;
+	}
+
+	&__desc {
+		text-align: center;
+		font-size: 24px;
+		margin: 3% 10% 10% 10%;
+	}
+}
+
+.dot {
+	display: inline-block;
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #95c2d2 !important;
+	border-radius: 50%;
+	transition: background-color 0.6s ease;
+}
+
+.dot.active,
+.dot:hover {
+	background-color: var(--main-bg-color) !important;
+}

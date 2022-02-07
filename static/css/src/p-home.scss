@@ -1,0 +1,38 @@
+.p-home {
+	--home-contact-content-zindex: 2;
+	--home-contact-white-bg-zindex: 1;
+
+	&__contact {
+		display: flex;
+		position: relative;
+		align-items: center;
+		padding-inline: 45px;
+		background-color: #95c2d2;
+		min-height: 100vh;
+		overflow: hidden;
+
+		&::before {
+			display: block;
+			position: absolute;
+			top: 36px;
+			left: 87px;
+			z-index: var(--home-contact-white-bg-zindex);
+			content: "";
+			width: 100%;
+			height: calc(100vh - 72px);
+			background-color: white;
+		}
+	}
+
+	&__main {
+		height: var(--body-max-height);
+		background-color: var(--main-bg-color);
+	}	
+}
+
+@import "./p-home.d/m-main";
+@import "./p-home.d/m-sidenav";
+@import "./p-home.d/m-contact";
+@import "./p-home.d/m-contact-item";
+@import "./p-home.d/m-navhead";
+@import "./p-home.d/m-nav";

@@ -1,0 +1,127 @@
+.p-home-main {
+	height: var(--body-max-height);
+	background-color: var(--main-bg-color);
+}
+.p-home-mainheading {
+	color: #fff;
+	font-weight: bold;
+}
+.p-home-btns {
+	margin-top: 5%;
+	margin-left: 20%;
+}
+.m-btns--blue {
+	margin-top: 28px;
+}
+.p-home-menuicon {
+	float: right;
+	margin: 26px;
+	font-size: 30px;
+	cursor: pointer;
+}
+.p-home-hero {
+	margin-left: 64px;
+}
+.p-home-sidenav {
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 0;
+	z-index: 1;
+	background-color: #fff;
+	border-radius: 60px 0px 0px 60px;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+}
+
+.p-home-sidenav a {
+	display: flex;
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 23px;
+	color: #237d9e;
+	font-weight: 400;
+	padding: 15px;
+	transition: 0.3s;
+	line-height: 27px;
+	margin-left: 2%;
+}
+
+.p-home-sidenav a:hover {
+	color: #f1f1f1;
+}
+
+.p-home-nav-closebtn {
+	position: absolute;
+	top: 45vh;
+	right: 88%;
+	color: #fff !important;
+	background: #237d9e;
+	border-radius: 0 25% 25% 0;
+	width: 13%;
+	height: 54px;
+}
+.p-home-nav-head {
+	display: flex;
+	flex-direction: row;
+	margin-left: 35px;
+	margin-bottom: 10px;
+}
+.p-home-nav-list span {
+	margin: 3%;
+}
+.p-home-nav-list {
+	margin-left: 7%;
+}
+.p-home-nav-heading {
+	font-weight: bold;
+	padding: 5%;
+	color: #237d9e;
+	transition: 0.3s;
+	font-size: 23px;
+}
+hr {
+	width: 250px;
+	background-color: #237d9e;
+	margin-left: 40px;
+	margin-bottom: 20px;
+}
+.p-home-contact {
+	position: relative;
+	background-color: #95c2d2;
+	height: 667px;
+}
+.p-home-contact-bg {
+	position: absolute;
+	top: 39px;
+	left: 20%;
+	height: 590px;
+	background-color: #fff;
+	z-index: 1;
+	width: 80%;
+}
+.p-home-contact-main {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	background-color: #237d9e;
+	height: 488px;
+	width: 80%;
+	z-index: 2;
+	transform: translate(-50%, -50%);
+}
+.p-home-contact-list {
+	position: absolute;
+	top: 43%;
+	left: 50%;
+	z-index: 3;
+	transform: translate(-50%, -50%);
+	line-height: 92px;
+	color: #fff;
+}
+.p-home-contact-list span {
+	margin-left: 11px;
+	font-size: 14px;
+}
