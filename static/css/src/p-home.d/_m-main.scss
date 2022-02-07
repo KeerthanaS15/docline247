@@ -7,8 +7,8 @@
 	}
     	
 	&__hero {
-		margin-left: 64px;
-	}
+		text-align: center;
+		padding: 13% 13% 0 13%;	}
 
     &__mainheading {
 		color: #fff;
@@ -16,11 +16,11 @@
 	}
 
     &__btns {
-		margin-top: 5%;
-		margin-left: 20%;
-        display: flex;
-        flex-flow: column;
-        row-gap: 28px;
+		display: flex;
+		flex-flow: column;
+		row-gap: 28px;
+		align-items: center;
+		margin-top: 4%;
 	}
 
     &__overlay {
