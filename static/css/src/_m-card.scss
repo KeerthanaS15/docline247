@@ -1,7 +1,6 @@
 .m-card {
 	height: var(--body-max-height);
 	background-color: #fff !important;
-
 	&__head {
 		padding: 37px;
 		color: var(--main-bg-color);
@@ -11,7 +10,7 @@
 	&__image {
 		display: flex;
 		justify-content: center;
-		width: 100%;
+		
 	}
 
 	&__sub-heading {
@@ -23,8 +22,8 @@
 
 	&__desc {
 		text-align: center;
-		margin-top: 30px;
 		font-size: 24px;
+		margin: 3% 10% 10% 10%;
 	}
 }
 

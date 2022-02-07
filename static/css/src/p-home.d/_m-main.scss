@@ -1,9 +1,12 @@
 .m-main{
+	text-align: center;
+	position: relative;
     &__menuicon {
-		float: right;
-		margin: 26px;
 		font-size: 30px;
 		cursor: pointer;
+		position: absolute;
+		right:26px;
+		top:26px;
 	}
     	
 	&__hero {

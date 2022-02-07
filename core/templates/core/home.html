@@ -11,29 +11,29 @@
     <main class="p-home__main">
         <div id="sidenav" class="m-sidenav">
             <div class="m-sidenav__head m-navhead">
-                    <img src="{% static 'images/sidenav-icon.png' %}" alt="hospital-sign">
-                    <span class="m-navhead__heading">DOCLINE 24X7</span>
+                <img src="{% static 'images/sidenav-icon.png' %}" alt="hospital-sign">
+                <span class="m-navhead__heading">DOCLINE 24X7</span>
             </div>
 
             <hr class="m-sidenav__line">
 
-            <div class="m-sidenav__list m-navlist">
-                    <a href="#myCarousel" class="m-navlist__item m-navlist__item--how">
-                       How to book an <br> appointment?
-                    </a>
+            <nav class="m-sidenav__list m-nav">
+                <a href="#myCarousel" class="m-nav__item m-nav__item--how">
+                   How to book an <br> appointment?
+                </a>
 
-                    <a href="#" class="m-navlist__item m-navlist__item--book">
-                        Book an appointment
-                    </a>
+                <a href="#" class="m-nav__item m-nav__item--book">
+                    Book an appointment
+                </a>
 
-                    <a href="#" class="m-navlist__item m-navlist__item--contact">
-                        Contact Us
-                    </a>
+                <a href="#" class="m-nav__item m-nav__item--contact">
+                    Contact Us
+                </a>
                     
-                    <a href="#" class="m-navlist__item m-navlist__item--login">
-                        Admin Login
-                    </a>
-            </div>
+                <a href="#" class="m-nav__item m-nav__item--login">
+                    Admin Login
+                </a>
+            </nav>
 
             <!-- <ul class="m-sidenav__list">
                 <li>
@@ -69,9 +69,7 @@
     
             <div id="overlay" class="m-main__overlay" onclick="closeNav()"></div>
     
-            <div class="m-main__hero">
-                <img src="{% static 'images/doctor-home.png' %}" alt="">
-            </div>
+            <img src="{% static 'images/doctor-home.png' %}" class="m-main__hero" alt="">
     
             <h1 class="m-main__mainheading">DOCLINE 24x7</h1>    
 
@@ -102,10 +100,10 @@
                 <h3 class="m-card__sub-heading">VIEW DOCTOR DETAILS</h3>
 
                 <p class="m-card__desc">
-                    Refer the doctor details <br>
-                    to choose the best <br>
-                    based on your <br>
-                    health needs. <br>
+                    Refer the doctor details 
+                    to choose the best 
+                    based on your 
+                    health needs. 
                 </p>
             </div>
 
@@ -119,9 +117,9 @@
                 <h3 class="m-card__sub-heading">REQUEST APPOINMENT</h3>
 
                 <p class="m-card__desc">
-                    Fill the form by entering <br>
-                    necessary details in the <br>
-                    required fields and click <br>
+                    Fill the form by entering 
+                    necessary details in the 
+                    required fields and click 
                     submit button.
                 </p>
             </div>
@@ -136,8 +134,8 @@
                 <h3 class="m-card__sub-heading">STATUS CHECKING</h3>
 
                 <p class="m-card__desc">
-                    Visit the link sent via the <br>
-                    email to check your <br>
+                    Visit the link sent via the 
+                    email to check your 
                     appointment status.
                 </p>
             </div>
