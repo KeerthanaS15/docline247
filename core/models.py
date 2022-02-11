@@ -57,10 +57,9 @@ class Appointment(models.Model):
         db_table = 'dl_appointments'
 
     def save(self, *args, **kwargs):
-        if(self.doctor.category == self.category):
-            super(Appointment, self).save(*args, **kwargs)
-        else:
+        if(self.doctor.category != self.category):
             raise ValidationError("Doctor and Category do not match")
+        super(Appointment, self).save(*args, **kwargs)
         # endif
 
     def __str__(self) -> str:
