@@ -12,11 +12,10 @@ class HomePageView(TemplateView):
 
     template_name = "core/home.html"
 
-<<<<<<< HEAD
 
 class DoctorPageView(ListView):
 
-    template_name = 'core/doctors.html'
+    template_name = 'core/doctor.html'
     paginate_by = 2
     model = Doctor
     ordering = 'id'
@@ -29,8 +28,3 @@ class DoctorPageView(ListView):
         return queryset
 
 
-=======
-class DoctorPageView(TemplateView):
-
-    template_name = "core/doctor.html"
->>>>>>> b5354de487e47012bcc273b194d7381182119dad
