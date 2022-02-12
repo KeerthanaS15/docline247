@@ -5,6 +5,9 @@
         font-weight: bold;
         text-align: center;
     }
+    &__category{
+        margin-bottom: 5%;
+    }
 }
 @import "./p-doctor.d/m-category";
 @import "./p-doctor.d/m-category-inner";

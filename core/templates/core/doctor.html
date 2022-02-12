@@ -22,22 +22,22 @@
         <a href="" class="m-category__item m-category-inner">
             <img src="{% static 'images/cardio.svg' %}" alt="cardio" class="m-category-inner__img">
 
-            <p class="m-category-inner__name">Cardio</p>
+            <span class="m-category-inner__name">Cardio</span>
         </a>  
         <a href="" class="m-category__item">
             <img src="{% static 'images/neuro.svg' %}" alt="neuro" class="m-category-inner__img">
 
-            <p class="m-category-inner__name">Neuro</p>
+            <span class="m-category-inner__name">Neuro</span>
         </a>
         <a href="" class="m-category__item">
             <img src="{% static 'images/endocrine.svg' %}" alt="endocrine" class="m-category-inner__img">
 
-            <p class="m-category-inner__name">Endocrine</p>
+            <span class="m-category-inner__name">Endocrine</span>
         </a>
         <a href="" class="m-category__item">
             <img src="{% static 'images/gastro.svg' %}" alt="endocrine" class="m-category-inner__img">
 
-            <p class="m-category-inner__name">Gastro</p>
+            <span class="m-category-inner__name">Gastro</span>
         </a>
     </div>
 
@@ -45,14 +45,12 @@
         <img src="{% static 'images/Dr.Smith.svg' %}" alt="" class="m-doctor-card__img">
 
         <div class="m-doctor-card__info m-doctor-card-side">
-            <ul class="m-doctor-card-side__info-list">
-                <li>Dr. Smith</li>
-                <li>Cardiologist</li>
-                <li>Male - 60yrs</li>
-                <li>2010 - Present</li>
-            </ul>
+            <span class="m-doctor-card-side__list m-doctor-card-side__list--name">Dr. Smith</span>
+            <span class="m-doctor-card-side__list">Cardiologist</span>
+            <span class="m-doctor-card-side__list">Male - 60yrs</span>
+            <span class="m-doctor-card-side__list">2010 - Present</span>
     
-            <button class="m-btn m-btn--blue m-doctor-card-side__btn">BOOK AN APPOINTMENT</button>
+            <button class="m-btn m-btn--blue m-doctor-card-side__list--btn">BOOK AN APPOINTMENT</button>
         </div>
     </div>
 </main>
