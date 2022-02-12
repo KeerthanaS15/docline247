@@ -1,0 +1,17 @@
+.m-header{
+    height: 58px;
+    background-color: var(--main-bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    &__img{
+        height: 26px;
+    }
+
+    &__heading{
+        color: #fff;
+        font-weight: bold;
+    }
+    
+}

@@ -12,6 +12,7 @@ class HomePageView(TemplateView):
 
     template_name = "core/home.html"
 
+<<<<<<< HEAD
 
 class DoctorPageView(ListView):
 
@@ -28,3 +29,8 @@ class DoctorPageView(ListView):
         return queryset
 
 
+=======
+class DoctorPageView(TemplateView):
+
+    template_name = "core/doctor.html"
+>>>>>>> b5354de487e47012bcc273b194d7381182119dad
