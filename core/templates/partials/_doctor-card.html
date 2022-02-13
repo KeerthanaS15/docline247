@@ -1,0 +1,11 @@
+{% load static %}
+
+
+    <img src="{% static './images/Dr.Smith.svg' %}" alt="" class="m-doctor-card__img"><div class="m-doctor-card__info m-doctor-card-side">
+
+    <span class="m-doctor-card-side__list m-doctor-card-side__list--name">Dr. {{doctor.name}}</span>
+    <span class="m-doctor-card-side__list">{{doctor.category}}</span>
+    <span class="m-doctor-card-side__list">{{doctor.gender}} - {{doctor.age}}yrs</span>
+    <span class="m-doctor-card-side__list">{{doctor.year_of_employment}} - Present</span>
+                       
+    <button class="m-btn m-btn--blue m-doctor-card-side__list--btn">BOOK AN APPOINTMENT</button>         

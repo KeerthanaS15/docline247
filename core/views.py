@@ -19,7 +19,7 @@ class DoctorPageView(ListView):
     paginate_by = 2
     model = Doctor
     ordering = 'id'
-    context_object_name = 'all_doctors_details'
+    context_object_name = 'doctors'
 
     def get_queryset(self):
         queryset = self.model.objects.all()

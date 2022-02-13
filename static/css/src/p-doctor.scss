@@ -1,12 +1,15 @@
 .p-doctor{
     height: var(--body-max-height);
     &__subheading{
-        color: #237d9e;
+        color: #237d9e !important;
         font-weight: bold;
         text-align: center;
     }
     &__category{
-        margin-bottom: 5%;
+        margin: 5%;
+    }
+    &__info{
+        margin: 0 28px 28px 28px;
     }
 }
 @import "./p-doctor.d/m-category";
