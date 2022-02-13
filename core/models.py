@@ -15,6 +15,8 @@ class User(AbstractUser):
 
 class Category(models.Model):
     name = models.CharField(max_length=50, unique=True)
+    icon = models.ImageField(
+        upload_to='media/categories/', blank=True, null=True)
 
     class Meta:
         db_table = 'dl_categories'
@@ -39,6 +41,8 @@ class Doctor(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     age = models.PositiveSmallIntegerField()
     year_of_employment = models.IntegerField(choices=YEAR_CHOICES)
+    profile_pic = models.ImageField(
+        upload_to='media/doctors/', blank=True, null=True)
 
     class Meta:
         db_table = 'dl_doctors'

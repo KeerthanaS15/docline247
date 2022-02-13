@@ -9,7 +9,7 @@
 {% block view_content %}
 <main class="p-doctor">
     <nav class="p-doctor__nav m-header">
-        <a href="/core" class="m-header__img">
+        <a href="{%url 'core:home-page'%}" class="m-header__img">
             <img src="{% static 'images/home.svg' %}" alt="go-to-home">
         </a>
     
@@ -19,31 +19,19 @@
     <h4 class="p-doctor__subheading">Select Category</h4>
 
     <div class="p-doctor__category m-category">
-        <a href="http://localhost:8001/core/doctors?category=Cardiology" class="m-category__item m-category-inner">
-            <img src="{% static 'images/cardio.svg' %}" alt="cardio" class="m-category-inner__img">
+        {% for category in categories %}
+        <a href="{% url 'core:doctor-page' %}?category={{category.name}}" class="m-category__item m-category-inner">
+            <img src="{{category.icon.url}}" alt="cardio" class="m-category-inner__img">
 
-            <span class="m-category-inner__name">Cardio</span>
+            <span class="m-category-inner__name">{{category.name}}</span>
         </a>  
-        <a href="" class="m-category__item">
-            <img src="{% static 'images/neuro.svg' %}" alt="neuro" class="m-category-inner__img">
-
-            <span class="m-category-inner__name">Neuro</span>
-        </a>
-        <a href="" class="m-category__item">
-            <img src="{% static 'images/endocrine.svg' %}" alt="endocrine" class="m-category-inner__img">
-
-            <span class="m-category-inner__name">Endocrine</span>
-        </a>
-        <a href="" class="m-category__item">
-            <img src="{% static 'images/gastro.svg' %}" alt="endocrine" class="m-category-inner__img">
-
-            <span class="m-category-inner__name">Gastro</span>
-        </a>
+        {% endfor %}
     </div>
-    {% for doctor in page_obj %}
+
+    {% for doctor in doctors %}
 
     <div class="p-doctor__info m-doctor-card">
-        <img src="{% static 'images/Dr.Smith.svg' %}" alt="" class="m-doctor-card__img">
+        <img src="{{doctor.profile_pic.url}}" alt="doctor" class="m-doctor-card__img">
 
         <div class="m-doctor-card__info m-doctor-card-side">
             <span class="m-doctor-card-side__list m-doctor-card-side__list--name">Dr. {{doctor.name}}</span>
