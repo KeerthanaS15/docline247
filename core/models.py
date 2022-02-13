@@ -13,16 +13,29 @@ class User(AbstractUser):
         db_table = 'dl_users'
 
 
+class CategoryManager(models.Manager):
+
+    def get_by_natural_key(self, name):
+        return self.get(name=name)
+
+
 class Category(models.Model):
     name = models.CharField(max_length=50, unique=True)
-    icon = models.ImageField(
-        upload_to='media/categories/', blank=True, null=True)
+    icon = models.ImageField(upload_to='media/categories/')
+
+    objects = CategoryManager()
 
     class Meta:
         db_table = 'dl_categories'
 
     def __str__(self) -> str:
         return self.name
+
+
+class DoctorManager(models.Manager):
+
+    def get_by_natural_key(self, name):
+        return self.get(name=name)
 
 
 class Doctor(models.Model):
@@ -41,8 +54,9 @@ class Doctor(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     age = models.PositiveSmallIntegerField()
     year_of_employment = models.IntegerField(choices=YEAR_CHOICES)
-    profile_pic = models.ImageField(
-        upload_to='media/doctors/', blank=True, null=True)
+    profile_pic = models.ImageField(upload_to='media/doctors/')
+
+    objects = DoctorManager()
 
     class Meta:
         db_table = 'dl_doctors'
@@ -51,10 +65,18 @@ class Doctor(models.Model):
         return self.name
 
 
+class PatientManager(models.Manager):
+
+    def get_by_natural_key(self, name):
+        return self.get(name=name)
+
+
 class Patient(models.Model):
     name = models.CharField(max_length=128)
     email = models.EmailField()
     dob = models.DateField()
+
+    objects = PatientManager()
 
     class Meta:
         db_table = 'dl_patients'

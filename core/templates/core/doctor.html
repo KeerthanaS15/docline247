@@ -8,11 +8,11 @@
 
 {% block view_content %}
 <main class="p-doctor">
-    <nav class="p-doctor__nav m-header">
-        <a href="{%url 'core:home-page'%}" class="m-header__img">
+    <header class="p-doctor__nav m-header">
+        <a href="/core" class="m-header__img">
             <img src="{% static 'images/home.svg' %}" alt="go-to-home">
         </a>
-    
+
         <span class="m-header__heading h4">DOCTORS INFORMATION</span>
     </header>
 
@@ -22,42 +22,18 @@
             <img src="{{category.icon.url}}" alt="cardio" class="m-category-inner__img">
 
             <span class="m-category-inner__name">{{category.name}}</span>
-        </a>  
-        <a href="{% url 'core:doctor-page' %}?category=Neurology" class="m-category__item">
-            <img src="{% static 'images/neuro.svg' %}" alt="neuro" class="m-category-inner__img">
-
-            <span class="m-category-inner__name">Neuro</span>
         </a>
-        <a href="" class="m-category__item">
-            <img src="{% static 'images/endocrine.svg' %}" alt="endocrine" class="m-category-inner__img">
+        {% endfor %}
 
-            <span class="m-category-inner__name">Endocrine</span>
-        </a>
-        <a href="" class="m-category__item">
-            <img src="{% static 'images/gastro.svg' %}" alt="endocrine" class="m-category-inner__img">
+        <a href="{% url 'core:doctor-page' %}" class="m-category__item m-category-inner">
+            <img src="{% static 'images/viewall.png'%}" alt="cardio" class="m-category-inner__img">
 
-            <span class="m-category-inner__name">Gastro</span>
+            <span class="m-category-inner__name">View all</span>
         </a>
     </div>
-  
-    {% for doctor in doctors %}
-        <div class="p-doctor__info m-doctor-card">
-            <img src="{% static './images/Dr.Smith.svg' %}" alt="" class="m-doctor-card__img">
 
-            <div class="m-doctor-card__info m-doctor-card-side">
-                <span class="m-doctor-card-side__list m-doctor-card-side__list--name">Dr. {{doctor.name}}</span>
-                <span class="m-doctor-card-side__list">{{doctor.category}}</span>
-                <span class="m-doctor-card-side__list">{{doctor.gender}} - {{doctor.age}}yrs</span>
-                <span class="m-doctor-card-side__list">{{doctor.year_of_employment}} - Present</span>
-
-                <button class="m-btn m-btn--blue m-doctor-card-side__list--btn">BOOK AN APPOINTMENT</button>         
-            </div>
-        </div>
-    {% endfor %}
-
+    {% include 'partials/_doctor-card.html' %}
 
     {% include 'partials/_pagination.html' %}
-
 </main>
-
 {% endblock view_content %}
