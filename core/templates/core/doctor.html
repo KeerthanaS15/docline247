@@ -13,10 +13,8 @@
             <img src="{% static 'images/home.svg' %}" alt="go-to-home">
         </a>
     
-        <h4 class="m-header__heading">DOCTORS INFORMATION</h4>
-    </nav>
-
-    <h4 class="p-doctor__subheading">Select Category</h4>
+        <span class="m-header__heading h4">DOCTORS INFORMATION</span>
+    </header>
 
     <div class="p-doctor__category m-category">
         {% for category in categories %}
@@ -25,60 +23,40 @@
 
             <span class="m-category-inner__name">{{category.name}}</span>
         </a>  
-        {% endfor %}
-    </div>
+        <a href="{% url 'core:doctor-page' %}?category=Neurology" class="m-category__item">
+            <img src="{% static 'images/neuro.svg' %}" alt="neuro" class="m-category-inner__img">
 
+            <span class="m-category-inner__name">Neuro</span>
+        </a>
+        <a href="" class="m-category__item">
+            <img src="{% static 'images/endocrine.svg' %}" alt="endocrine" class="m-category-inner__img">
+
+            <span class="m-category-inner__name">Endocrine</span>
+        </a>
+        <a href="" class="m-category__item">
+            <img src="{% static 'images/gastro.svg' %}" alt="endocrine" class="m-category-inner__img">
+
+            <span class="m-category-inner__name">Gastro</span>
+        </a>
+    </div>
+  
     {% for doctor in doctors %}
+        <div class="p-doctor__info m-doctor-card">
+            <img src="{% static './images/Dr.Smith.svg' %}" alt="" class="m-doctor-card__img">
 
-    <div class="p-doctor__info m-doctor-card">
-        <img src="{{doctor.profile_pic.url}}" alt="doctor" class="m-doctor-card__img">
+            <div class="m-doctor-card__info m-doctor-card-side">
+                <span class="m-doctor-card-side__list m-doctor-card-side__list--name">Dr. {{doctor.name}}</span>
+                <span class="m-doctor-card-side__list">{{doctor.category}}</span>
+                <span class="m-doctor-card-side__list">{{doctor.gender}} - {{doctor.age}}yrs</span>
+                <span class="m-doctor-card-side__list">{{doctor.year_of_employment}} - Present</span>
 
-        <div class="m-doctor-card__info m-doctor-card-side">
-            <span class="m-doctor-card-side__list m-doctor-card-side__list--name">Dr. {{doctor.name}}</span>
-            <span class="m-doctor-card-side__list">{{doctor.category}}</span>
-            <span class="m-doctor-card-side__list">{{doctor.gender}} - {{doctor.age}}yrs</span>
-            <span class="m-doctor-card-side__list">{{doctor.year_of_employment}} - Present</span>
-    
-            <button class="m-btn m-btn--blue m-doctor-card-side__list--btn">BOOK AN APPOINTMENT</button>
+                <button class="m-btn m-btn--blue m-doctor-card-side__list--btn">BOOK AN APPOINTMENT</button>         
+            </div>
         </div>
-    </div>
-
     {% endfor %}
 
-    <div class="pagination">
-        <span class="step-links">
-            {% if 'category' in request.get_full_path %}
-                {% if page_obj.has_previous %}
-                <a href="{{ request.get_full_path }}&page=1">&laquo; first</a>
-                <a href="{{ request.get_full_path }}&page={{ page_obj.previous_page_number }}">previous</a>
-                {% endif %}
 
-                <span class="current">
-                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-                </span>
-
-                {% if page_obj.has_next %}
-                    <a href="{{ request.get_full_path }}&page={{ page_obj.next_page_number }}">next</a>
-                    <a href="{{ request.get_full_path }}&page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
-                {% endif %}
-                
-            {% else %}
-                {% if page_obj.has_previous %}
-                <a href="?page=1">&laquo; first</a>
-                <a href="?page={{ page_obj.previous_page_number }}">previous</a>
-                {% endif %}
-
-                <span class="current">
-                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-                </span>
-
-                {% if page_obj.has_next %}
-                    <a href="?page={{ page_obj.next_page_number }}">next</a>
-                    <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
-                {% endif %}
-            {% endif %}  
-        </span>
-    </div>
+    {% include 'partials/_pagination.html' %}
 
 </main>
 
