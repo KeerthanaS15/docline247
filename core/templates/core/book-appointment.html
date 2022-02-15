@@ -1,0 +1,52 @@
+{% extends 'master.html' %}
+
+{% load static %}
+
+{% block addl_stylesheets %}
+<link rel="stylesheet" href="{% static 'css/dist/p-book-appointment.css' %}">
+{% endblock addl_stylesheets %}
+
+{% block view_content %}
+<main class="p-book-appointment">
+    <header class="m-header">
+        <a href="" class="m-header__img">
+            <img src="{% static 'images/home.svg' %}" alt="go-to-home">
+        </a>
+
+        <span class="m-header__heading h4">BOOK AN APPOINMENT</span>
+    </header>
+
+    <form class="m-form" action="#">
+        <input type="text" placeholder="Name" name="name" class="m-form__input m-form__input--name" required>
+
+        <input type="text" placeholder="Email" name="email" class="m-form__input m-form__input--email" required>
+
+        <input type="text" placeholder="Date Of Birth" name="dob" class="m-form__input m-form__input--dob" required>
+
+        <select name="designation" class="m-form__input m-form__input--designation" required>
+            <option value="Cardiologist">Cardiologist</option>
+            <option value="Neurologist">Neurologist</option>
+            <option value="Endocrine">Endocrine</option>
+        </select>
+
+        <select name="doctors" class="m-form__input m-form__input--doctor" required>
+            <option value="Dr.name">Dr.Name</option>
+            <option value="Dr.name">Dr.Name</option>
+            <option value="Dr.name">Dr.Name</option>
+        </select>
+
+        <input type="text" placeholder="Date Of Appointment" name="doa" class="m-form__input m-form__input--doa" required>
+
+        <select name="time-slot" class="m-form__input m-form__input--time" required>
+            <option value="time-slot">time slot</option>
+            <option value="time-slot">time slot</option>
+            <option value="time-slot">time slot</option>
+        </select>
+
+        <input type="text" placeholder="Convey details to Doctor.." name="dob" class="m-form__input m-form__input--notes" required>
+
+        <button class="m-btn m-btn--blue m-form__submit">SUBMIT</button>
+
+    </form>
+</main>
+{% endblock view_content %}

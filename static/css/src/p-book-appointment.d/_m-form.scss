@@ -1,0 +1,50 @@
+.m-form{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    &__input{
+        height: 44px;
+        color: #8E9BA8;
+        width: 90%;
+        background-color: #F2F2F2;
+        border: none;
+        border-radius: 10px;
+        margin: 10px;
+        background-repeat: no-repeat;
+        background-position: left;
+        text-align: center;
+        background-size: 35px;
+        background-position-x: 16px;
+        &--name{
+            background-image: url("/static/images/name.svg");
+        }
+        &--email{
+            background-image: url("/static/images/email.svg");
+        }
+        &--dob{
+            background-image: url("/static/images/dob.svg");
+        }
+        &--designation{
+            background-image: url("/static/images/designation.svg");
+        }
+        &--doctor{
+            background-image: url("/static/images/doctor.svg");
+        }
+        &--doa{
+            background-image: url("/static/images/doa.svg");
+        }
+        &--time{
+            background-image: url("/static/images/clock.svg");
+        }
+        &--notes{
+            background-image: url("/static/images/notes.svg");
+            height: 70px;
+        }
+    }
+    &__submit{
+        width: 90%;
+    }
+}
+option{
+    width: 100px;
+}

@@ -32,4 +32,7 @@ class DoctorPageView(ListView):
         context['categories'] = Category.objects.all()
         return context
 
+class BookAppointment(TemplateView):
+
+    template_name = "core/book-appointment.html"
 
