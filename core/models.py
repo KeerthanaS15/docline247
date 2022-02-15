@@ -21,7 +21,7 @@ class CategoryManager(models.Manager):
 
 class Category(models.Model):
     name = models.CharField(max_length=50, unique=True)
-    icon = models.ImageField(upload_to='media/categories/')
+    icon = models.ImageField(upload_to='categories/')
 
     objects = CategoryManager()
 
@@ -54,7 +54,7 @@ class Doctor(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     age = models.PositiveSmallIntegerField()
     year_of_employment = models.IntegerField(choices=YEAR_CHOICES)
-    profile_pic = models.ImageField(upload_to='media/doctors/')
+    profile_pic = models.ImageField(upload_to='doctors/')
 
     objects = DoctorManager()
 
