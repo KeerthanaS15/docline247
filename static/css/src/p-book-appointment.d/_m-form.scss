@@ -2,6 +2,8 @@
     display: flex;
     flex-flow: column;
     align-items: center;
+    max-width: 400px;
+    margin-inline: auto;
     &__input{
         height: 44px;
         color: #8E9BA8;
@@ -13,7 +15,7 @@
         background-repeat: no-repeat;
         background-position: left;
         text-align: center;
-        background-size: 35px;
+        background-size: 30px;
         background-position-x: 16px;
         &--name{
             background-image: url("/static/images/name.svg");

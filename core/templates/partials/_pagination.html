@@ -1,6 +1,6 @@
 <div class="m-pagination">
     <span class="m-page-controls">
-        {% if 'category' in request.get_full_path %}
+        {% if request.GET %}
             {% if page_obj.has_previous %}
             <a href="{{ request.get_full_path }}&page=1">1</a>
             <a href="{{ request.get_full_path }}&page={{ page_obj.previous_page_number }}">&laquo;</a>

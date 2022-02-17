@@ -9,11 +9,11 @@ def create_category(apps, schema_editor):
     Category.objects.bulk_create([
         Category(
             name='Cardiology',
-            icon='media/categories/image_53.png'
+            icon='categories/image_53.png'
         ),
         Category(
             name='Neurology',
-            icon='media/categories/image_54.png'
+            icon='categories/image_54.png'
         ),
     ])
 

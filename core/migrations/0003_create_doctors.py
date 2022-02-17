@@ -13,7 +13,7 @@ def create_doctors(apps, schema_editor):
             category=Category.objects.get(name='Cardiology'),
             age=45,
             year_of_employment=2010,
-            profile_pic='media/doctors/image_59.png'
+            profile_pic='doctors/image_59.png'
         ),
         Doctor(
             name='Alena',
@@ -21,7 +21,7 @@ def create_doctors(apps, schema_editor):
             category=Category.objects.get(name='Cardiology'),
             age=35,
             year_of_employment=2017,
-            profile_pic='media/doctors/image_60.png'
+            profile_pic='doctors/image_60.png'
         ),
         Doctor(
             name='William',
@@ -29,7 +29,7 @@ def create_doctors(apps, schema_editor):
             category=Category.objects.get(name='Neurology'),
             age=43,
             year_of_employment=2014,
-            profile_pic='media/doctors/image_59.png'
+            profile_pic='doctors/image_59.png'
         ),
         Doctor(
             name='John',
@@ -37,7 +37,7 @@ def create_doctors(apps, schema_editor):
             category=Category.objects.get(name='Neurology'),
             age=39,
             year_of_employment=2017,
-            profile_pic='media/doctors/image_59.png'
+            profile_pic='doctors/image_59.png'
         ),
         Doctor(
             name='Abraham',
@@ -45,7 +45,7 @@ def create_doctors(apps, schema_editor):
             category=Category.objects.get(name='Cardiology'),
             age=46,
             year_of_employment=2009,
-            profile_pic='media/doctors/image_59.png'
+            profile_pic='doctors/image_59.png'
         ),
     ])
 
