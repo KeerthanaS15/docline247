@@ -1,0 +1,41 @@
+{% extends 'master.html' %}
+
+{% load static %}
+
+{% block addl_stylesheets %}
+<link rel="stylesheet" href="{% static 'css/dist/p-doctor.css' %}">
+{% endblock addl_stylesheets %}
+
+{% block view_content %}
+<main class="p-doctor">
+    <header class="p-doctor__nav m-header">
+        <a href="/core" class="m-header__img">
+            <img src="{% static 'images/home.svg' %}" alt="go-to-home">
+        </a>
+
+        <span class="m-header__heading h4">DOCTORS INFORMATION</span>
+    </header>
+
+    <div class="p-doctor__category m-category">
+        {% for category in categories %}
+        <a href="{% url 'core:doctor-page' %}?category={{category.name}}" class="m-category__item m-category-inner">
+            <img src="{{category.icon.url}}" alt="{{category.name}}" class="m-category-inner__img">
+
+            <span class="m-category-inner__name">{{category.name}}</span>
+        </a>
+        {% endfor %}
+
+        <a href="{% url 'core:doctor-page' %}" class="m-category__item m-category-inner">
+            <img src="{% static 'images/viewall.png'%}" alt="viewall" class="m-category-inner__img">
+
+            <span class="m-category-inner__name">View all</span>
+        </a>
+    </div>
+
+    {% for doctor in doctors %}
+        {% include 'partials/_doctor-card.html' with object=doctor  %}
+    {% endfor %}
+
+    {% include 'partials/_pagination.html' %}
+</main>
+{% endblock view_content %}

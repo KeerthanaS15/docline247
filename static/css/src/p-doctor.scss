@@ -1,0 +1,18 @@
+.p-doctor{
+    height: var(--body-max-height);
+    &__subheading{
+        color: #237d9e !important;
+        font-weight: bold;
+        text-align: center;
+    }
+    &__category{
+        margin: 5%;
+    }
+    &__info{
+        margin: 0 28px 28px 28px;
+    }
+}
+@import "./p-doctor.d/m-category";
+@import "./p-doctor.d/m-category-inner";
+@import "./p-doctor.d/m-doctor-card";
+@import "./p-doctor.d/m-doctor-card-side";

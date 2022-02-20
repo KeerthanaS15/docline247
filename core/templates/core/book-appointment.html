@@ -1,0 +1,26 @@
+{% extends 'master.html' %}
+
+{% load static %}
+
+{% block addl_stylesheets %}
+<link rel="stylesheet" href="{% static 'css/dist/p-book-appointment.css' %}">
+{% endblock addl_stylesheets %}
+
+{% block view_content %}
+<main class="p-book-appointment">
+    <header class="m-header">
+        <a href="" class="m-header__img">
+            <img src="{% static 'images/home.svg' %}" alt="go-to-home">
+        </a>
+
+        <span class="m-header__heading h4">BOOK AN APPOINTMENT</span>
+    </header>
+
+    <form action="" class="m-form" method="POST" enctype="multipart/form-data" autocomplete="off">
+        {% csrf_token %}
+        {{patient_form}}
+        {{form}}
+        <button class="m-btn m-btn--blue m-form__submit" type="submit">SUBMIT</button>
+    </form>
+</main>
+{% endblock view_content %}

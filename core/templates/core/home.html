@@ -7,7 +7,7 @@
 {% endblock addl_stylesheets %}
 
 {% block view_content %}
-<div class="p-home">
+<div class="p-home" id="p-home">
     <main class="p-home__main">
         <div id="sidenav" class="m-sidenav">
             <div class="m-sidenav__head m-navhead">
@@ -22,7 +22,7 @@
                    How to book an <br> appointment?
                 </a>
 
-                <a href="#" class="m-nav__item m-nav__item--book">
+                <a href="" class="m-nav__item m-nav__item--book">
                     Book an appointment
                 </a>
 
@@ -74,8 +74,8 @@
             <h1 class="m-main__mainheading">DOCLINE 24x7</h1>    
 
             <div class="m-main__btns">
-                <button class="m-btn m-btn--white">BOOK AN <br> APPOINMENT</button>
-                <button class="m-btn m-btn--blue">DOCTOR DETAILS</button>
+                <a href="{% url 'core:doctor-page' %}" class="m-btn m-btn--white">BOOK AN <br> APPOINMENT</a>
+                <a href="{% url 'core:doctor-page' %}" class="m-btn m-btn--blue">DOCTOR DETAILS</a>
             </div>
         </div> 
     </main>

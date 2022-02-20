@@ -1,0 +1,16 @@
+.m-category-inner{
+    text-decoration: none;
+    &__img{
+        background-color: #BFD7E0;
+        width: 60px;
+        height: 60px;
+        padding: 10px;
+        border-radius: 50%;
+    }
+
+    &__name{
+        text-align: center;
+        color: #000;
+        display: block;
+    }
+}

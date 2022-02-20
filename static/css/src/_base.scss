@@ -4,11 +4,14 @@
 	box-sizing: border-box;
 }
 body {
-	font-family: var(--body-font-family);
+	font-family: var(--body-font-family) !important;
 }
 h1,
 h2 {
 	text-align: center;
+}
+.h4{
+	font-size: 18px;
 }
 li {
 	list-style: none;

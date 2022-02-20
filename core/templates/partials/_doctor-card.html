@@ -1,0 +1,15 @@
+{% load static %}
+
+
+<div class="p-doctor__info m-doctor-card">
+    <img src="{{object.profile_pic.url}}" alt="doctor" class="m-doctor-card__img">
+
+    <div class="m-doctor-card__info m-doctor-card-side">
+        <span class="m-doctor-card-side__list m-doctor-card-side__list--name">Dr. {{object.name}}</span>
+        <span class="m-doctor-card-side__list">{{object.category}}</span>
+        <span class="m-doctor-card-side__list">{{object.gender}} - {{object.age}}yrs</span>
+        <span class="m-doctor-card-side__list">{{object.year_of_employment}} - Present</span>
+
+        <button class="m-btn m-btn--blue m-doctor-card-side__list--btn">BOOK AN APPOINTMENT</button>
+    </div>
+</div>

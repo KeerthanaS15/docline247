@@ -1,0 +1,19 @@
+.m-doctor-card-side{
+    display: flex;
+    flex-flow: column;
+
+    &__list{
+        &--btn{
+            font-size: 12px;
+            width: 170px;
+            height: 33px;
+            font-weight: bold;
+            margin-top: 5%;
+        }
+        &--name{
+            font-weight: bold;
+            font-size: 18px;
+        }
+    }
+
+}
