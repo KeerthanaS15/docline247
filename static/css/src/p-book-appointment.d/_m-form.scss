@@ -4,8 +4,12 @@
     align-items: center;
     max-width: 400px;
     margin-inline: auto;
+    &__error{
+        color: red;
+    }
     &__input{
         height: 44px;
+        resize: none;
         color: #8E9BA8;
         width: 90%;
         background-color: #F2F2F2;
@@ -42,11 +46,21 @@
             background-image: url("/static/images/notes.svg");
             height: 70px;
         }
+        &::placeholder 
+        {
+          text-align: left;
+          position: relative;
+          left: 60px; 
+          
+        }
     }
     &__submit{
         width: 90%;
     }
 }
-option{
-    width: 100px;
+.errorlist{
+    color: red;
+    position: relative;
+    bottom: 13rem;
+
 }
