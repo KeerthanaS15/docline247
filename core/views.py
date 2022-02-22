@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView
-from .models import Category, Doctor, Patient
-from django.views.generic import CreateView
+from .models import Category, Doctor, Patient, Appointment
+from django.views.generic import FormView
 from django.urls import reverse_lazy
-from .forms import AppointmentCreateForm, PatientCreateForm
+from .forms import AppointmentCreateForm
 
 
 class HomePageView(TemplateView):
@@ -37,39 +37,29 @@ class DoctorPageView(ListView):
         return context
 
 
-class BookAppointment(CreateView):
-
-    model = Doctor
+class BookAppointment(FormView):
     template_name = 'core/book-appointment.html'
     form_class = AppointmentCreateForm
     success_url = reverse_lazy('core:book-appointment')
 
-    def get_context_data(self, **kwargs):
-        context = super(BookAppointment, self).get_context_data(**kwargs)
-
-        if self.request.method == 'POST':
-            patient_form = PatientCreateForm(
-                self.request.POST, prefix='patient')
-        else:
-            patient_form = PatientCreateForm(prefix='patient')
-        context['patient_form'] = patient_form
-        # endif
-
-        return context
-
     def post(self, request, *args, **kwargs):
         appointment_form = AppointmentCreateForm(request.POST)
-        patient_form = PatientCreateForm(request.POST, prefix='patient')
-
-        if appointment_form.is_valid() and patient_form.is_valid():
+        context = super(BookAppointment, self).get_context_data(**kwargs)
+        if appointment_form.is_valid():
+            cd = appointment_form.cleaned_data
             patient, created = Patient.objects.get_or_create(
-                name=patient_form.cleaned_data['name'], email=patient_form.cleaned_data['email'], dob=patient_form.cleaned_data['dob'])
-            appointment = appointment_form.save(commit=False)
-            appointment.patient_id = patient.id
+                name=cd['name'], email=cd['email'], dob=cd['dob'])
+            appointment = Appointment(
+                patient_id=patient.id,
+                date_of_appointment=cd['date_of_appointment'],
+                category=cd['category'],
+                doctor=cd['doctor'],
+                time_slot=cd['time_slot'],
+                message=cd['message']
+            )
             appointment.save()
 
             return self.form_valid(appointment_form)
 
         else:
-            return render(self.request, 'form.html', 'Something went wrong')
-        # endif
+            return render(self.request, 'core/book-appointment.html', context)
