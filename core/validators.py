@@ -15,4 +15,4 @@ def future_date_validator(value: date):
 
 
 name_validator = RegexValidator(
-    r'^[a-zA-Z\']*$', 'Only alphabets are allowed.')
+    r'^[a-zA-Z]+[\']*$', 'Only alphabets are allowed.')
