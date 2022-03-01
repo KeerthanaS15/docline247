@@ -20,11 +20,13 @@
         {% csrf_token %}
         {% for field in form %}
         {{ field }}
-        <p class="m-form__error">{{ field.errors.as_text }}</p>
         {% endfor %}
-        <p class="m-form__error m-form__error--timeslot">{{form.non_field_errors}}</p>
 
         <button class="m-btn m-btn--blue m-form__submit" type="submit">SUBMIT</button>
     </form>
 </main>
 {% endblock view_content %}
+{% block addl_scripts %}
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+<script src="{% static 'js/book-appointment.js' %}"></script>
+{% endblock addl_scripts %}

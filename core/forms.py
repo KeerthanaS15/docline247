@@ -29,7 +29,7 @@ class AppointmentCreateForm(forms.Form):
 
     dob = forms.DateField(validators=[dob], widget=forms.DateInput(attrs={
         'class': 'm-form__input m-form__input--dob',
-        'placeholder': 'Date of birth'
+        'placeholder': 'Date of birth',
 
     }))
 
