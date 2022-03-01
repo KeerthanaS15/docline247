@@ -1,0 +1,21 @@
+.p-appointment-detail{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-top: 160px;
+    row-gap: 25px;
+    &__status{
+        height: 70px;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        color: #fff;
+        border-radius: 10px
+    }
+}
+
+
+@import "./p-appointment-detail.d/m-actors";
+@import "./p-appointment-detail.d/m-grid-info";

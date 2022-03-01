@@ -1,25 +1,38 @@
 {% extends 'master.html' %} {% load static %} {% block addl_stylesheets %}
-<link rel="stylesheet" href="{% static 'css/dist/p-doctor.css' %}" />
+<link rel="stylesheet" href="{% static 'css/dist/p-appointment-detail.css' %}" />
 {% endblock addl_stylesheets %} {% block view_content %}
+<header class=" m-header">
+	<a href="/core" class="m-header__img">
+		<img src="{% static 'images/home.svg' %}" alt="go-to-home">
+	</a>
 
-<h1>Appointment Details</h1>
-
-{% if appointment.status == 'CANCELED' %}
-<h1>Appointment canceled</h1>
-{% else %}
-<p>Patient name: {{appointment.patient}}</p>
-<p>Date of appointment: {{appointment.date_of_appointment}}</p>
-<p>Category: {{appointment.category}}</p>
-<p>Doctor: {{appointment.doctor}}</p>
-<p>{{appointment.time_slot}}</p>
-<p>{{appointment.status}}</p>
-<form method="POST" enctype="multipart/form-data">
-	{% csrf_token %} 
-	{{form.as_p}}
-	<button type="submit">CANCEL</button>
-</form>
-{%endif%}
-
+	<span class="m-header__heading h4">CHECK APPOINTMENT STATUS</span>
+</header>
+<main class="p-appointment-detail">
+	<div class="m-actor">
+		<p class="m-actor__name m-actor__name--patient">{{appointment.patient}}</p>
+		<img src="{% static 'images/link.svg' %}" alt="link">
+		<p class="m-actor__name m-actor__name--doctor">{{appointment.doctor}}</p>
+	</div>
+	
+	<div class="m-grid-info">
+		<div class="m-grid-info__item m-grid-info__item--doa">{{appointment.date_of_appointment}}</div>
+		
+		<div class="m-grid-info__item">{{appointment.time_slot}}</div>
+		
+		<form method="POST" enctype="multipart/form-data">
+			{% csrf_token %} 
+			{{form.as_p}}
+			<button type="submit" class=" m-grid-info__item m-grid-info__item--cancel">Cancel Appointment</button> 
+		</form>
+	</div>
+    
+	<div>
+		<p id="status" class="p-appointment-detail__status">{{appointment.status}}</p>
+	</div>
+	
+	
+</main>
 <script>
 	var labels = document.getElementsByTagName("LABEL");
 	for (var i = 0; i < labels.length; i += 1) {
@@ -30,3 +43,6 @@
 	cancel_input.style.display = "none";
 </script>
 {% endblock view_content %}
+{% block addl_scripts %}
+<script src="{% static 'js/appointment-detail.js' %}"></script>
+{% endblock addl_scripts %}

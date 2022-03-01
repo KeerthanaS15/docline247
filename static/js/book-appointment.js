@@ -2,7 +2,7 @@ $(document).ready(function() {
     var curr = new Date();
     $.validator.addMethod("past_date_validator", function(value,element) {
         var date = value;
-        
+
         var d = new  Date(parseInt(date.substring(0,4)),parseInt(date.substring(5,7)-1),parseInt(date.substring(8,10)));
         if(d < curr)
         {
@@ -77,4 +77,3 @@ $(document).ready(function() {
         }
     });
     });
-  

@@ -1,0 +1,30 @@
+.m-grid-info
+{
+    height: 90px;
+    background-color: #237d9e;
+    width: 79%;
+    border-radius: 20px;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    column-gap: 10px;
+    font-weight: bold;
+    display: grid;
+    text-align: center;
+    grid-template-columns: auto auto auto;
+    &__item{
+        &--cancel{
+            background-color: #F45656;
+            height: 90px;
+            border: none;
+            bottom: 10px;
+            position: relative;
+            width: 120px;
+            border-radius: 0 20px 20px 0px;
+        }
+        &--doa{
+            border-right:2px solid white ;
+        }
+    }
+}
