@@ -1,10 +1,10 @@
-# from django.db import models
-
-# Create your models here.
 from datetime import datetime
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.core.exceptions import ValidationError
+from .utils import unique_slug_generator
+from django.db.models.signals import pre_save
+from django.utils.translation import gettext_lazy as _
 
 
 class User(AbstractUser):
@@ -86,12 +86,22 @@ class Patient(models.Model):
 
 
 class Appointment(models.Model):
+
+    class StatusChoices(models.TextChoices):
+        IN_PROGRESS = 'IN PROGRESS', _('In Progress')
+        ACCEPTED = 'ACCEPTED', _('Accepted')
+        REJECTED = 'REJECTED', _('Rejected')
+        CANCELED = 'CANCELED', _('Canceled')
+
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     date_of_appointment = models.DateField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     doctor = models.ForeignKey(Doctor, on_delete=models.CASCADE)
     time_slot = models.TimeField()
     message = models.TextField()
+    slug = models.SlugField(max_length=250, null=True, blank=True)
+    status = models.CharField(max_length=11,
+                              choices=StatusChoices.choices, default=StatusChoices.IN_PROGRESS)
 
     class Meta:
         db_table = 'dl_appointments'
@@ -104,3 +114,12 @@ class Appointment(models.Model):
 
     def __str__(self) -> str:
         return str(self.patient)
+
+
+def pre_save_receiver(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        instance.slug = unique_slug_generator(instance)
+        print(instance.slug)
+
+
+pre_save.connect(pre_save_receiver, sender=Appointment)

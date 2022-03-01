@@ -1,9 +1,14 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView, ListView, UpdateView
 from .models import Category, Doctor, Patient, Appointment
 from django.views.generic import FormView
-from django.urls import reverse_lazy
+from django.urls import reverse, reverse_lazy
 from .forms import AppointmentCreateForm
+from django.template.loader import render_to_string
+from django.contrib.sites.shortcuts import get_current_site
+from django.utils.html import strip_tags
+from django.conf import settings
+from django.core.mail import EmailMultiAlternatives
 
 
 class HomePageView(TemplateView):
@@ -59,7 +64,37 @@ class BookAppointment(FormView):
             )
             appointment.save()
 
+            # current_site = get_current_site(request)
+            # subject = 'Appointment'
+            # from_email = settings.EMAIL_HOST_USER
+            # to = cd['email']
+            # slug = Appointment.objects.get(
+            #     id=appointment.id).slug
+            # message = render_to_string(
+            #     'core/email.html', {
+            #         'name': cd['name'],
+            #         'date_of_appointment': cd['date_of_appointment'],
+            #         'domain': current_site,
+            #         'slug': slug,
+            #     }
+            # )
+            # text_content = strip_tags(message)
+            # msg = EmailMultiAlternatives(
+            #     subject, text_content, from_email, [to])
+            # msg.attach_alternative(message, "text/html")
+            # msg.send()
+
             return self.form_valid(appointment_form)
 
         else:
             return render(self.request, 'core/book-appointment.html', context)
+
+
+class AppointmentDetailView(UpdateView):
+    template_name = 'core/appointment-detail.html'
+    model = Appointment
+    context_object_name = 'appointment'
+    fields = ['status']
+
+    def get_success_url(self):
+        return reverse('core:appointment_detail', kwargs={'slug': self.object.slug})

@@ -1,0 +1,32 @@
+{% extends 'master.html' %} {% load static %} {% block addl_stylesheets %}
+<link rel="stylesheet" href="{% static 'css/dist/p-doctor.css' %}" />
+{% endblock addl_stylesheets %} {% block view_content %}
+
+<h1>Appointment Details</h1>
+
+{% if appointment.status == 'CANCELED' %}
+<h1>Appointment canceled</h1>
+{% else %}
+<p>Patient name: {{appointment.patient}}</p>
+<p>Date of appointment: {{appointment.date_of_appointment}}</p>
+<p>Category: {{appointment.category}}</p>
+<p>Doctor: {{appointment.doctor}}</p>
+<p>{{appointment.time_slot}}</p>
+<p>{{appointment.status}}</p>
+<form method="POST" enctype="multipart/form-data">
+	{% csrf_token %} 
+	{{form.as_p}}
+	<button type="submit">CANCEL</button>
+</form>
+{%endif%}
+
+<script>
+	var labels = document.getElementsByTagName("LABEL");
+	for (var i = 0; i < labels.length; i += 1) {
+		labels[i].style.display = "none";
+	}
+	var cancel_input = document.getElementById("id_status");
+	cancel_input.value = "CANCELED";
+	cancel_input.style.display = "none";
+</script>
+{% endblock view_content %}

@@ -1,56 +1,59 @@
-from datetime import datetime, date, timedelta
 from django import forms
+from datetime import datetime, date
 from .models import Doctor, Category
 from django.core.validators import MinLengthValidator
-
-
-def dob(value):
-    if value > date.today():
-        raise forms.ValidationError("Date of birth cannot be a future date")
-
-
-def date_of_appointment(value):
-    if value < date.today():
-        raise forms.ValidationError(
-            "Please add future date")
+from .validators import past_date_validator, future_date_validator, name_validator
 
 
 class AppointmentCreateForm(forms.Form):
-    name = forms.CharField(max_length=128, validators=[MinLengthValidator(5)], widget=forms.TextInput(attrs={
-        'class': 'm-form__input m-form__input--name',
-        'placeholder': 'Name'
-    }))
+
+    time_choices = (
+        ('09:00:00', '09:00 AM'),
+        ('10:30:00', '10:30 AM'),
+        ('12:00:00', '12:00 PM'),
+        ('16:00:00', '04:00 PM'),
+        ('18:00:00', '06:00 PM'),
+    )
+
+    name = forms.CharField(max_length=128,
+                           validators=[MinLengthValidator(3), name_validator],
+                           widget=forms.TextInput(attrs={
+                               'class': 'm-form__input m-form__input--name',
+                               'placeholder': 'Name'
+                           }))
 
     email = forms.EmailField(widget=forms.EmailInput(attrs={
         'class': 'm-form__input m-form__input--email',
         'placeholder': 'Email'
-
     }))
 
-    dob = forms.DateField(validators=[dob], widget=forms.DateInput(attrs={
-        'class': 'm-form__input m-form__input--dob',
-        'placeholder': 'Date of birth'
-
-    }))
-
-    date_of_appointment = forms.DateField(validators=[date_of_appointment], widget=forms.DateInput(attrs={
-        'class': 'm-form__input m-form__input--doa',
-        'placeholder': 'Date of appointment'
-    }))
+    dob = forms.DateField(validators=[past_date_validator],
+                          widget=forms.DateInput(attrs={
+                              'class': 'm-form__input m-form__input--dob',
+                              'placeholder': 'Date of birth'
+                          }))
 
     category = forms.ModelChoiceField(
-        queryset=Category.objects.all(), widget=forms.Select(attrs={
+        queryset=Category.objects.all(),
+        widget=forms.Select(attrs={
             'class': 'm-form__input m-form__input--designation',
         }))
 
-    doctor = forms.ModelChoiceField(queryset=Doctor.objects.all(), widget=forms.Select(attrs={
-        'class': 'm-form__input m-form__input--doctor',
-    }))
+    doctor = forms.ModelChoiceField(queryset=Doctor.objects.all(),
+                                    widget=forms.Select(attrs={
+                                        'class': 'm-form__input m-form__input--doctor',
+                                    }))
 
-    time_slot = forms.TimeField(widget=forms.TimeInput(attrs={
-        'class': 'm-form__input m-form__input--time',
-        'placeholder': 'Time slot'
-    }))
+    date_of_appointment = forms.DateField(validators=[future_date_validator],
+                                          widget=forms.DateInput(attrs={
+                                              'class': 'm-form__input m-form__input--doa',
+                                              'placeholder': 'Date of appointment'
+                                          }))
+
+    time_slot = forms.ChoiceField(choices=time_choices,
+                                  widget=forms.Select(attrs={
+                                      'class': 'm-form__input m-form__input--time',
+                                  }))
 
     message = forms.CharField(widget=forms.Textarea(attrs={
         'class': 'm-form__input m-form__input--notes',
@@ -74,6 +77,9 @@ class AppointmentCreateForm(forms.Form):
         cleaned_data = super().clean()
         date_of_appointment = cleaned_data.get('date_of_appointment')
         time_slot = cleaned_data.get('time_slot')
+
         if(date_of_appointment == date.today()):
             if(time_slot <= datetime.now().time()):
-                raise forms.ValidationError("Please enter valid time-slot")
+                raise forms.ValidationError("Please select future time-slot")
+            # endif
+        # endif
