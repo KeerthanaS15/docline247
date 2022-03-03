@@ -9,7 +9,7 @@
 {% block view_content %}
 <main class="p-doctor">
     <header class="p-doctor__nav m-header">
-        <a href="/core" class="m-header__img">
+        <a href="{% url 'core:home-page' %}" class="m-header__img">
             <img src="{% static 'images/home.svg' %}" alt="go-to-home">
         </a>
 
