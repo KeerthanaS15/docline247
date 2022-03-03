@@ -7,6 +7,7 @@
 {% endblock addl_stylesheets %}
 
 {% block view_content %}
+
 <main class="p-book-appointment">
     <header class="m-header">
         <a href="{% url 'core:home-page' %}" class="m-header__img">
@@ -32,5 +33,6 @@
 {% endblock view_content %}
 {% block addl_scripts %}
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="{% static 'js/book-appointment.js' %}"></script>
 {% endblock addl_scripts %}

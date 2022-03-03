@@ -30,7 +30,8 @@ class AppointmentCreateForm(forms.Form):
     dob = forms.DateField(validators=[past_date_validator],
                           widget=forms.DateInput(attrs={
                               'class': 'm-form__input m-form__input--dob',
-                              'placeholder': 'Date of birth'
+                              'placeholder': 'Date of birth',
+                              'type':'date'
                           }))
 
     category = forms.ModelChoiceField(
@@ -47,7 +48,8 @@ class AppointmentCreateForm(forms.Form):
     date_of_appointment = forms.DateField(validators=[future_date_validator],
                                           widget=forms.DateInput(attrs={
                                               'class': 'm-form__input m-form__input--doa',
-                                              'placeholder': 'Date of appointment'
+                                              'placeholder': 'Date of appointment',
+                                              'type':'date'
                                           }))
 
     time_slot = forms.ChoiceField(choices=time_choices,
