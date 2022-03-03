@@ -1,5 +1,6 @@
 {% extends 'master.html' %} {% load static %} {% block addl_stylesheets %}
 <link rel="stylesheet" href="{% static 'css/dist/p-appointment-detail.css' %}" />
+
 {% endblock addl_stylesheets %} {% block view_content %}
 <header class=" m-header">
 	<a href="/core" class="m-header__img">
@@ -30,8 +31,6 @@
 	<div>
 		<p id="status" class="p-appointment-detail__status">{{appointment.status}}</p>
 	</div>
-	
-	
 </main>
 <script>
 	var labels = document.getElementsByTagName("LABEL");
