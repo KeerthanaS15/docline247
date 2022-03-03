@@ -119,7 +119,6 @@ class Appointment(models.Model):
 def pre_save_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
         instance.slug = unique_slug_generator(instance)
-        print(instance.slug)
 
 
 pre_save.connect(pre_save_receiver, sender=Appointment)

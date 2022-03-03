@@ -19,6 +19,6 @@ else if($("#status").html() === "CANCELED")
         "background-color":"#F1F2F2",
         "color":"#237d9e",
         "border-left":"14px solid #237d9e"})
-    $(".m-grid-info").html("YOu Cancelled Your Appointment")
+    $(".m-grid-info").html("You cancelled your appointment")
     $("#status").css("background-color", "#F45656");
 }

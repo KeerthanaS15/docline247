@@ -31,7 +31,7 @@ class AppointmentCreateForm(forms.Form):
                           widget=forms.DateInput(attrs={
                               'class': 'm-form__input m-form__input--dob',
                               'placeholder': 'Date of birth',
-                              'type':'date'
+                              'type': 'date'
                           }))
 
     category = forms.ModelChoiceField(
@@ -49,7 +49,7 @@ class AppointmentCreateForm(forms.Form):
                                           widget=forms.DateInput(attrs={
                                               'class': 'm-form__input m-form__input--doa',
                                               'placeholder': 'Date of appointment',
-                                              'type':'date'
+                                              'type': 'date'
                                           }))
 
     time_slot = forms.ChoiceField(choices=time_choices,
@@ -63,7 +63,7 @@ class AppointmentCreateForm(forms.Form):
     }))
 
     def __init__(self, *args, **kwargs):
-        super(AppointmentCreateForm, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.fields['name'].label = ""
         self.fields['email'].label = ""
         self.fields['dob'].label = ""
@@ -81,7 +81,7 @@ class AppointmentCreateForm(forms.Form):
         time_slot = cleaned_data.get('time_slot')
 
         if(date_of_appointment == date.today()):
-            if(time_slot <= datetime.now().time()):
+            if(time_slot <= str(datetime.now().time())):
                 raise forms.ValidationError("Please select future time-slot")
             # endif
         # endif

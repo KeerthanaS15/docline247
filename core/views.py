@@ -9,6 +9,7 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.utils.html import strip_tags
 from django.conf import settings
 from django.core.mail import EmailMultiAlternatives
+from django.contrib import messages
 
 
 class HomePageView(TemplateView):
@@ -63,6 +64,7 @@ class BookAppointment(FormView):
                 message=cd['message']
             )
             appointment.save()
+            messages.success(self.request, 'Form submitted successfully')
 
             # current_site = get_current_site(request)
             # subject = 'Appointment'

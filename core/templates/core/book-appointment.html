@@ -17,6 +17,18 @@
         <span class="m-header__heading h4">BOOK AN APPOINTMENT</span>
     </header>
 
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <div>
+                    {{ message }} 
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                </div>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
+
     <form action="" class="m-form" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         
